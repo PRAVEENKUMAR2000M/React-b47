@@ -110,3 +110,29 @@ export default App
 
 
 
+
+
+
+
+
+
+import React, { useState } from 'react';
+
+function App() {
+  // let { counter } = props
+  // console.log(counter);
+  const [counter, setcounter] = useState(0);
+  setTimeout(() => {
+    setcounter(counter + 1)
+  }, 1000)
+
+  console.log("rendering", counter)
+
+  return (
+    <div>{counter}</div>
+  )
+}
+
+export default App
+
+
