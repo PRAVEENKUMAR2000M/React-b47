@@ -136,3 +136,48 @@ function App() {
 export default App
 
 
+
+
+
+import React, { useState } from 'react';
+
+function Display({ counter }) {
+
+  return (
+    <div>{counter}</div>
+  )
+}
+
+function App() {
+  // let { counter } = props
+  // console.log(counter);
+  const [counter, setcounter] = useState(0);
+  // setTimeout(() => {
+  //   setcounter(counter + 1)
+  // }, 1000)
+
+  // console.log("rendering", counter)
+
+  const handlePlus = () => {
+    setcounter(counter + 1);
+  }
+
+  const handleMinus = () => {
+    setcounter(counter - 1);
+  }
+  const handleZero = () => {
+    setcounter(0);
+  }
+
+  return (
+    <div>
+      <Display counter={counter} />
+      <button onClick={handlePlus}>plus</button>
+      <button onClick={handleMinus}>minus</button>
+      <button onClick={handleZero}>zero</button>
+    </div>
+  )
+}
+
+export default App
+
