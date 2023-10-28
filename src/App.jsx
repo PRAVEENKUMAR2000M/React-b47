@@ -277,3 +277,31 @@ function App() {
 }
 
 export default App
+
+
+
+
+import React, { useEffect, useState } from 'react'
+
+function App() {
+
+  const [count, setcount] = useState(0);
+  useEffect(() => {
+    document.title = `count: ${count}`;
+  }, [count]);
+
+  const handleClick = () => {
+    setcount(count + 1)
+  }
+
+  console.log(count);
+
+  return (
+    <div>
+      <h1>Document title changed</h1>
+      <button onClick={handleClick}>title change</button>
+    </div>
+  )
+}
+
+export default App
