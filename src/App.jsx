@@ -332,3 +332,38 @@ function App() {
 }
 
 export default App
+
+
+
+
+//passing data from child to parent component
+import React, { useState } from 'react';
+
+function ChildComponent({ onMessage }) {
+  const message = "hello from child";
+
+  return (
+    <div>
+      <h1>child component</h1>
+      <button onClick={() => onMessage(message)}>send message to the parent</button>
+    </div>
+  );
+}
+
+function App() {
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (data) => {
+    setMessage(data);
+  }
+
+  return (
+    <div>
+      <h1>parent component</h1>
+      <p>This message from child component: {message}</p>
+      <ChildComponent onMessage={handleMessage} />
+    </div>
+  );
+}
+
+export default App;
