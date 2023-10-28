@@ -152,43 +152,7 @@ function App() {
 
 
 
-  //useEffect
-// create a state to store the data fetch from the API 
 
-import React, { useEffect, useState } from 'react'
-
-function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts`)
-      .then(response => response.json())
-      .then(result => setData(result));
-  }, []);
-
-
-  return (
-    <div>
-      <h1>API DATA</h1>
-      {
-        data ? (
-          <ul>
-            {
-              data.map(item => {
-                return <li key={item.id}>{item.body}</li>
-              })
-            }
-          </ul>
-        ) : (
-          <p>loading...</p>
-        )
-      }
-    </div>
-  )
-
-}
-
-export default App
 
   // let { counter } = props
   // console.log(counter);
@@ -273,3 +237,43 @@ function App() {
 
 export default App
 
+
+
+
+  //useEffect
+// create a state to store the data fetch from the API 
+
+import React, { useEffect, useState } from 'react'
+
+function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts`)
+      .then(response => response.json())
+      .then(result => setData(result));
+  }, []);
+
+
+  return (
+    <div>
+      <h1>API DATA</h1>
+      {
+        data ? (
+          <ul>
+            {
+              data.map(item => {
+                return <li key={item.id}>{item.body}</li>
+              })
+            }
+          </ul>
+        ) : (
+          <p>loading...</p>
+        )
+      }
+    </div>
+  )
+
+}
+
+export default App
